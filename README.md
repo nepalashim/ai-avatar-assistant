@@ -1,120 +1,102 @@
-AI Avatar Assistant
+# AI Avatar Assistant
 
-A conversational AI system designed to manage customer interactions for hotels and service-based businesses. This project brings together multiple modern technologies to deliver smooth voice-driven communication, automated workflows, and a realistic AI avatar experience.
+A conversational AI system designed to manage customer interactions for hotels and service-based businesses. It integrates real-time voice communication, workflow automation, and a visual AI avatar to deliver an interactive guest experience.
 
-Features
+## Features
 
-Voice-Based Interaction
-Utilizes LiveKit with an AI speech model to provide natural, real-time conversations.
+### Real-Time Voice Interaction
+Enables natural, continuous audio conversations using LiveKit.
 
-Avatar Interface
-Integrates with Tavus to display a lifelike AI avatar during interactions.
+### Avatar Interface
+Integrates Tavus to display a realistic AI avatar during interactions.
 
-Automated Workflows
-Uses an n8n MCP (Model Context Protocol) server to run complex hotel or business logic.
+### Workflow Automation
+Uses an n8n MCP (Model Context Protocol) server to manage business logic, automate tasks, and integrate external systems.
 
-AI Agent Architecture
-Custom-built agent that handles queries, bookings, service requests, and operational tasks.
+### AI Agent System
+Custom agent architecture capable of handling bookings, answering queries, processing service requests, and managing hotel operations.
 
-Knowledge Integration
-Includes a knowledge management system for storing hotel data, FAQs, and service information.
+### Knowledge Management
+Includes a centralized knowledge module for hotel information, FAQs, and service data.
 
-Technologies Used
+## Technologies Used
+- **LiveKit** – Real-time audio/video communication  
+- **AI Speech/Language Model** – Conversational AI processing  
+- **Tavus** – Avatar rendering and interaction  
+- **n8n MCP Server** – Workflow automation and integration  
+- **Python** – Core programming language  
 
-LiveKit – Real-time communication platform for audio and video
+## Prerequisites
+- Python 3.8 or higher  
+- LiveKit credentials  
+- AI model API key  
+- Tavus API account  
+- n8n MCP server instance  
 
-AI Speech/Language Model – Used for conversational understanding
+## Installation
 
-Tavus – Avatar rendering and interaction technology
-
-n8n MCP Server – Automation and integration service
-
-Python – Main development language for the agent system
-
-Prerequisites
-
-Python 3.8+
-
-LiveKit account and credentials
-
-API key for your chosen AI model
-
-Tavus account with necessary keys
-
-Running instance of an n8n MCP server
-
-Installation
-
-Clone the repository:
-
+### Clone the Repository
 git clone https://github.com/nepalashim/ai-avatar-assistant.git
 cd ai-avatar-assistant
-
-
-Install dependencies:
+## Install Dependencies
 
 pip install -r requirements.txt
 
+Configure Environment Variables
 
-Set environment variables:
+Copy .env.example → .env
 
-Duplicate .env.example as .env
+Fill in API keys and required credentials
 
-Insert all required API keys and configuration values
-
-Run the agent:
-
+### Start the Agent
 python3 agent.py dev
 
 
-After starting the server, open the LiveKit Playground and connect to your agent.
+After starting, open the LiveKit Playground and connect to your agent.
 
-Configuration
+### Configuration
 
-Environment variables control all external services and integrations.
-Refer to .env.example for required fields, including:
+All settings are managed through environment variables. See .env.example for:
 
-LiveKit: URL, API key, and API secret
+LiveKit: URL, API key, secret
 
-AI Model Provider: API keys
+AI Model: API key
 
-Tavus: Persona ID, replica ID, and API key
+Tavus: Persona ID, Replica ID, API key
 
-n8n: MCP server endpoint
+n8n MCP: Server endpoint
 
-Project Structure
+### Project Structure
 ai-avatar-assistant/
-├── agent.py           # Main agent implementation
-├── server.py          # Application entry point
-├── tools.py           # Tool definitions and utilities
-├── prompts.py         # Prompt templates for AI behavior
-├── mcp_client/        # MCP client utilities
+├── agent.py            # Core agent logic
+├── server.py           # Main server entry point
+├── tools.py            # Utilities and tool definitions
+├── prompts.py          # AI prompt templates
+├── mcp_client/         # MCP client implementation
 │   ├── agent_tools.py
 │   ├── server.py
 │   └── util.py
-├── KMS/               # Knowledge system and logs
+├── KMS/                # Knowledge Management System
 │   └── logs/
-├── test/              # Test files
-└── requirements.txt   # Dependency list
+├── test/               # Test files
+└── requirements.txt    # Python dependencies
 
-Use Cases
+### Use Cases
 
-Handling guest check-in and check-out
+Guest check-in and check-out
 
-Managing reservations
+Room booking and reservation management
 
-Providing hotel information and amenity details
+Room service requests
 
-Supporting room service requests
+Hotel information and amenity details
 
-Acting as a digital concierge
+Digital concierge services
 
-Automating routine customer service tasks
+Automated customer support
 
-Security
+### Security
 
-Sensitive configuration values are stored in a .env file and excluded from version control
+All sensitive credentials are stored in .env (ignored by Git)
 
-API keys must be protected and updated periodically
-
-Production deployments should follow standard security and infrastructure best practices
+Keep API keys secure and rotate them regularly
